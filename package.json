@@ -1,0 +1,31 @@
+{
+  "name": "myuiss",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "main": "dist/lib/myui.umd.cjs",
+  "module": "dist/lib/myui.js",
+  "files": [
+    "dist/lib",
+    "src"
+  ],
+  "author": "laybrid",
+  "description": "xxx",
+  "keywords": ["aaa","bbb","ccc"],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "build:lib": "vite build --config vite.lib.config.ts",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/tsconfig": "^0.7.0",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0",
+    "vue-tsc": "^2.2.4"
+  }
+}
