@@ -9,8 +9,9 @@
 
 <script setup lang="ts">
 import { ref, defineExpose } from 'vue';
+import loadingGif from '../assets/loading.gif';
 const title = ref('')
-const imgSrc = ref('/src/loading/assets/loading.gif')
+const imgSrc = ref(loadingGif)
 
 function setTitle(newTitle: string) {
   title.value = newTitle
