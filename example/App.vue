@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import Test1 from '../src/test1/test1.vue'
-import Test2 from '../src/test2/test2.vue'
+import { ref } from 'vue';
+
+const text = ref('loading....')
 </script>
 
 <template>
-  123
-  <Test1/>
-  <Test2/>
+  <div v-loading:[text]="true">
+
+
+  </div>
 </template>
 
 <style scoped>

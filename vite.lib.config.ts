@@ -9,8 +9,8 @@ export default defineConfig({
     target: "es2020", //浏览器兼容
     lib:{
         entry:"src/index.ts", // 入口
-        name: 'myuiss',  // 全局变量
-        fileName: 'myuiss', //文件名  默认是package.json里的name
+        name: 'vue3-directive',  // 全局变量
+        fileName: 'vue3-directive', //文件名  默认是package.json里的name
         formats:['es','umd']
     },
     rollupOptions: {
