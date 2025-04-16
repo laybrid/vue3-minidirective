@@ -18,14 +18,14 @@ npm i vue3-minidirective
 ###  v-loading
 #### Basic usage
 Just need to bind boolean value.<br>
-main.js
+main.js:
 ~~~js
 import { createApp } from 'vue'
 import App from './App.vue'
 import{ loading } from 'vue3-minidirective'
 createApp(App).use(loading).mount('#app')
 ~~~
-templat
+template:
 ~~~html
 <template>
   <div class="home" v-loading="loading">
@@ -34,7 +34,7 @@ templat
 ~~~
 #### Customization
 You can customize the incoming loading image to replace the default image.<br>
-main.js
+main.js:
 ~~~js
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -43,7 +43,7 @@ createApp(App).use(loading,{
     img:require("loading.gif")
 }).mount('#app')
 ~~~
-templat
+template:
 ~~~html
 <template>
   <div class="home" v-loading:[loadingText]="loading">
