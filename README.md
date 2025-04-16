@@ -1,5 +1,57 @@
-# Vue 3 + TypeScript + Vite
+# Vue3-minidirective
+you can find some useful vue3 directives
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Install
+~~~
+npm i vue3-minidirective
+~~~
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Directive table
+
+| Directive | Description                          |
+| --------- | ------------------------------------ |
+| v-loading | display animation when loading data. |
+|           |                                      |
+
+## Usage
+
+###  v-loading
+#### Basic usage
+Just need to bind boolean value.<br>
+main.js
+~~~js
+import { createApp } from 'vue'
+import App from './App.vue'
+createApp(App).use(loading).mount('#app')
+~~~
+templat
+~~~html
+<template>
+  <div class="home" v-loading="loading">
+  </div>
+</template>
+~~~
+#### Customization
+You can customize the incoming loading image to replace the default image.<br>
+main.js
+~~~js
+import { createApp } from 'vue'
+import App from './App.vue'
+createApp(App).use(loading,{
+    img:require("loading.gif")
+}).mount('#app')
+~~~
+templat
+~~~html
+<template>
+  <div class="home" v-loading:[loadingText]="loading">
+  </div>
+</template>
+~~~
+Custom loading text
+
+## Loading Options
+
+| Key  | Description      | Type   | Default |
+| ---- | ---------------- | ------ | ------- |
+| img  | src of the image | String | ----    |
