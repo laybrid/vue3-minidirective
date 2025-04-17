@@ -15,7 +15,11 @@
     "url": "https://github.com/laybrid"
   },
   "description": "Some useful vue3 directives",
-  "keywords": ["vue3","directive","loading"],
+  "keywords": [
+    "vue3",
+    "directive",
+    "loading"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
@@ -23,6 +27,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "vite-plugin-css-injected-by-js": "^3.5.2",
     "vue": "^3.5.13"
   },
   "devDependencies": {

@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-
+// 借助插件直接内联css 使得用户不用单独引入css文件
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(),cssInjectedByJsPlugin()],
   //将静态资源复制到输出目录
   // assetsInclude: ['**/*.png', '**/*.jpg', '**/*.gif', '**/*.svg'],
   
