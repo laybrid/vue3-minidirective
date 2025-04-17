@@ -52,7 +52,7 @@ template:
 ~~~
 Custom loading text
 
-## Loading Options
+#### Loading Options
 
 | Key  | Description      | Type   | Default |
 | ---- | ---------------- | ------ | ------- |
