@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   //将静态资源复制到输出目录
-  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.gif', '**/*.svg'],
+  // assetsInclude: ['**/*.png', '**/*.jpg', '**/*.gif', '**/*.svg'],
   
   build: {
     outDir: 'dist/lib',
@@ -24,7 +24,7 @@ export default defineConfig({
         globals: {
           vue: 'Vue'
         },
-        assetFileNames: 'assets/[name].[ext]'
+        // assetFileNames: 'assets/[name].[ext]'
       },
     },
   },

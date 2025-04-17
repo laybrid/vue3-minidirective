@@ -39,6 +39,6 @@ defineExpose({ setTitle, setImg })
 .text-center p {
   margin: 5px 0;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
+  color: gray;
 }
 </style>

@@ -11,7 +11,7 @@ const loadingDirective = {
             instance.setImg(loadingDirective.options.img)
         }
     },
-    mounted(el: Element, binding: DirectiveBinding) {
+    mounted(el: HTMLElement, binding: DirectiveBinding) {
         const arg = binding.arg
         if ( arg != undefined) {
             instance.setTitle(arg)
@@ -20,7 +20,7 @@ const loadingDirective = {
             append(el, instance)
         }
     },
-    updated(el: Element, binding: DirectiveBinding) {
+    updated(el: HTMLElement, binding: DirectiveBinding) {
         const arg = binding.arg
         if (arg != undefined) {
             instance.setTitle(arg)
@@ -31,22 +31,23 @@ const loadingDirective = {
     }
 }
 
-function append(el: Element, instance: loadingType) {
+function append(el: HTMLElement, instance: loadingType) {
     fixStyle(el)
     // instance时loading组件的实例 .$el是loading组件的根dom
     el.appendChild(instance.$el)
 }
-
-function remove(el: Element, instance: loadingType) {
-    el.classList.remove('relative')
+let kase  = false //判断是否是元素本身自带的定位
+function remove(el: HTMLElement, instance: loadingType) {
+    kase && (el.style.position = '')
     el.removeChild(instance.$el)
 }
 
 // 挂载元素位置修正
-function fixStyle(el: Element) {
+function fixStyle(el: HTMLElement) {
     const style = getComputedStyle(el)
     if (['absolute', 'fixed', 'relative'].indexOf(style.position) === -1) {
-        !el.classList.contains('relative') && el.classList.add('relative')
+        el.style.position = 'relative'
+        kase = true
     }
 }
 export default loadingDirective
