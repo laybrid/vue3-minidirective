@@ -1,7 +1,7 @@
 {
   "name": "vue3-minidirective",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.5",
   "type": "module",
   "main": "dist/lib/vue3-minidirective.umd.cjs",
   "module": "dist/lib/vue3-minidirective.js",
@@ -18,7 +18,8 @@
   "keywords": [
     "vue3",
     "directive",
-    "loading"
+    "loading",
+    "lazy loading of Images"
   ],
   "scripts": {
     "dev": "vite",

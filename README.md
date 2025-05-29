@@ -11,7 +11,7 @@ npm i vue3-minidirective
 | Directive | Description                          |
 | --------- | ------------------------------------ |
 | v-loading | display animation when loading data. |
-|           |                                      |
+| v-lazy | lazy loading of Images |  
 
 ## Usage
 
@@ -23,6 +23,7 @@ main.js:
 import { createApp } from 'vue'
 import App from './App.vue'
 import{ loading } from 'vue3-minidirective'
+
 createApp(App).use(loading).mount('#app')
 ~~~
 template:
@@ -40,6 +41,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import{ loading } from 'vue3-minidirective'
 import myImg from 'loading.gif'
+
 createApp(App).use(loading,{
     img: myImg
 }).mount('#app')
@@ -58,3 +60,35 @@ Custom loading text
 | Key  | Description      | Type   | Default |
 | ---- | ---------------- | ------ | ------- |
 | img  | src of the image | String | ----    |
+
+### v-lazy
+#### Basic usage
+Just replace src with v-lazy.<br>
+main.js:
+~~~js
+import { createApp } from 'vue'
+import App from './App.vue'
+import{ lazy } from 'vue3-minidirective'
+import myImg from 'myimg.png'
+
+createApp(App).use(lazy,{
+  loading: myImg
+}).mount('#app')
+~~~
+template:
+~~~html
+<template>
+  <div>
+    <ul>
+        <li v-for="item in list" :key="item.id" class="item">
+            <img v-lazy="item.imgurl" alt=""width="400" height="400">
+        </li>
+    </ul>
+  </div>
+</template>
+~~~
+#### Lazy Options
+| Key  | Description      | Type   | Default |
+| ---- | ---------------- | ------ | ------- |
+| loading  | default src of the image | String | ----    |
+| error  | 	src of the image upon load fail| String | ----    |

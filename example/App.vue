@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Loading from './components/loading.vue';
+// import Loading from './components/loading.vue';
 import Lazy from './components/lazy.vue';
 </script>
 

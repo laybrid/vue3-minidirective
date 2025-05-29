@@ -1,4 +1,4 @@
-import { State, ImageManagerOptions } from "../types"
+import { State, type ImageManagerOptions } from "../types"
 import loadImage from "../util/loadImage"
 
 export default class ImageManager {
@@ -33,10 +33,10 @@ export default class ImageManager {
         }
         this.renderSrc(next)
     }
-    
-    update(src:string) {
+
+    update(src: string) {
         const currentSrc = this.src
-        if(currentSrc !== src) {
+        if (currentSrc !== src) {
             this.src = src
             this.state = State.loading
             this.load()
@@ -49,7 +49,7 @@ export default class ImageManager {
             this.render(this.src)
             this.cache.add(this.src)
             next && next()
-        }).catch((e) => {
+        }).catch(() => {
             this.state = State.error
             this.render(this.error)
             next && next()
