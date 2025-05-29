@@ -1,6 +1,13 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import loading from '../src/loading/core/directive'
+import lazy from '../src/lazy/index.ts'
+import loading from '../src/loading/index.ts'
 
-createApp(App).directive('loading',loading).mount('#app')
+// assets
+import img from './assets/loading-test.gif'
+createApp(App).use(loading,{
+    img:img
+}).use(lazy,{
+    loading:img
+}).mount('#app')

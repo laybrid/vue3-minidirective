@@ -39,8 +39,9 @@ main.js:
 import { createApp } from 'vue'
 import App from './App.vue'
 import{ loading } from 'vue3-minidirective'
+import myImg from 'loading.gif'
 createApp(App).use(loading,{
-    img:require("loading.gif")
+    img: myImg
 }).mount('#app')
 ~~~
 template:

@@ -1,20 +1,13 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-
-const text = ref('loading....')
-const loading = ref(true)
+import Loading from './components/loading.vue';
+import Lazy from './components/lazy.vue';
 </script>
 
 <template>
-  <div v-loading:[text]="loading" style="color: red;">
-
-
-  </div>
-  <!-- <button @click="loading = !loading">123</button> -->
+<!-- <Loading></loading> -->
+ <Lazy></Lazy>
 </template>
 
 <style scoped>
-div {
-  position: relative;
-}
+
 </style>

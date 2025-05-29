@@ -1,9 +1,10 @@
 import { createApp, type DirectiveBinding } from "vue"
 import loading from './loading.vue'
-// 获取loading组件实例的类型
+// get loading instance
 type loadingType = InstanceType<typeof loading>;
 const app = createApp(loading)
 const instance = app.mount(document.createElement('div')) as loadingType
+
 const loadingDirective = {
     options:{img:''},
     created() {
@@ -11,6 +12,7 @@ const loadingDirective = {
             instance.setImg(loadingDirective.options.img)
         }
     },
+
     mounted(el: HTMLElement, binding: DirectiveBinding) {
         const arg = binding.arg
         if ( arg != undefined) {
@@ -20,6 +22,7 @@ const loadingDirective = {
             append(el, instance)
         }
     },
+
     updated(el: HTMLElement, binding: DirectiveBinding) {
         const arg = binding.arg
         if (arg != undefined) {
@@ -36,6 +39,7 @@ function append(el: HTMLElement, instance: loadingType) {
     // instance时loading组件的实例 .$el是loading组件的根dom
     el.appendChild(instance.$el)
 }
+
 let kase  = false //判断是否是元素本身自带的定位
 function remove(el: HTMLElement, instance: loadingType) {
     kase && (el.style.position = '')
