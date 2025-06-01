@@ -1,4 +1,4 @@
 import loading from "./loading";
 import lazy from './lazy'
-
-export { loading, lazy } 
+import debounce from './debounce'
+export { loading, lazy, debounce } 
