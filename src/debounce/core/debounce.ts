@@ -19,7 +19,6 @@ const debounceDirective = {
         if(binding.arg && (typeof binding.arg == 'number'  || !isNaN(parseInt(binding.arg)))) {
           time = parseInt(binding.arg)
         }
-        console.log(time)
         const handler = () => {
             el._debounceHandler && clearTimeout(el._debounceTime)
             el._debounceTime = window.setTimeout(() => {
