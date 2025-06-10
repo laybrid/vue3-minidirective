@@ -1,7 +1,7 @@
 {
   "name": "vue3-minidirective",
   "private": false,
-  "version": "0.0.5",
+  "version": "0.0.7",
   "type": "module",
   "main": "dist/lib/vue3-minidirective.umd.cjs",
   "module": "dist/lib/vue3-minidirective.js",
